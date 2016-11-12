@@ -41,10 +41,25 @@ class Controller
      * Loads the "model".
      * @return object model
      */
-    public function loadModel()
+
+    public function loadModel($name = '')
     {
-        require APP . 'model/model.php';
-        // create new "model" (and pass the database connection)
-        $this->model = new Model($this->db);
+        /*$modelpath = 'model/'.$name.'_model.php';
+		if(file_exists($modelpath)){
+			require $modelpath;
+			$modelName = ucwords($name).'_Model';
+			$this->_model = new $modelName();
+		}*/
+
+        if ($name == '' ) {
+            require APP . 'model/model.php';
+            // create new "model" (and pass the database connection)
+            $this->model = new Model($this->db);
+        } else {
+            if(file_exists(APP . 'model/' . $name . '.php')){
+                require APP . 'model/' . $name . '.php';
+                return new Employee($this->db);
+            }
+        }
     }
 }
