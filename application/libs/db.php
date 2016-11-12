@@ -103,15 +103,16 @@ class queryFactory {
     $connectionRetry = 10;
     while (!isset($this->link) || ($this->link == FALSE && $connectionRetry !=0) )
     {
-      $this->link = @mysqli_connect($zf_host, $zf_user, $zf_password, $zf_database);
+      $this->link = mysqli_connect($zf_host, $zf_user, $zf_password, $zf_database);
       $connectionRetry--;
     }
+    
     if ($this->link) {
-      if (@mysqli_select_db($zf_database, $this->link)) {
+      if ($this->link->select_db($zf_database)) {
         if (defined('DB_CHARSET') && version_compare(@mysqli_get_server_info(), '4.1.0', '>=')) {
           $this->link->query("SET NAMES '" . DB_CHARSET . "'");
           if (function_exists('mysqli_set_charset')) {
-            @mysqli_set_charset(DB_CHARSET, $this->link);
+            mysqli_set_charset(DB_CHARSET, $this->link);
           } else {
             $this->link->query("SET CHARACTER SET '" . DB_CHARSET . "'");
           }
