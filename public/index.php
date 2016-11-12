@@ -1,5 +1,4 @@
 <?php
-
 // TODO get rid of this and work with namespaces + composer's autoloader
 // set a constant that holds the project's folder path, like "/var/www/".
 // DIRECTORY_SEPARATOR adds a slash to the end of the path

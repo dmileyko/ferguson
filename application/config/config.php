@@ -45,8 +45,8 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'mysql');
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'mini');
-define('DB_USER', 'root');
-define('DB_PASS', 'your_password');
+define('DB_HOST', 'us-cdbr-iron-east-04.cleardb.net');
+define('DB_NAME', 'ad_11fdfcfaebe14bc');
+define('DB_USER', 'be20fdf02e364b');
+define('DB_PASS', '390ccc31');
 define('DB_CHARSET', 'utf8');

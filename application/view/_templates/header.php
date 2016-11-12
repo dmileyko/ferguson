@@ -15,7 +15,7 @@
 <body>
     <!-- logo -->
     <div class="logo">
-        MINI
+        Logo Here
     </div>
 
     <!-- navigation -->
