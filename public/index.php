@@ -12,7 +12,8 @@ if (file_exists(ROOT . 'vendor/autoload.php')) {
 }
 // load application config (error reporting etc.)
 require APP . 'config/config.php';
-//require APP . 'libs/helper.php';
+require APP . 'libs/helper.php';
+require APP . 'libs/db.php';
 // load application class
 require APP . 'core/application.php';
 require APP . 'core/controller.php';
