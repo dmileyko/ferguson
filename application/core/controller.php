@@ -16,6 +16,7 @@ class Controller
     {
         $this->openDatabaseConnection();
         $this->loadModel();
+        session_start();
     }
     /**
      * Open the database connection with the credentials from application/config/config.php
@@ -34,7 +35,7 @@ class Controller
         
         $this->db = new queryFactory();
         $this->db->connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, false, false);
-    
+        
     }
     /**
      * Loads the "model".
