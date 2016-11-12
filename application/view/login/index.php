@@ -10,4 +10,4 @@
         <input type='submit' name='submit' class="btn btn-primary block full-width m-b" value='Login'>
     </form>
 </div>
-<a href="login/test">test</a>
+<a href="map/directions">Go</a>
