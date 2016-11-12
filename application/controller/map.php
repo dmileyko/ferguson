@@ -18,6 +18,8 @@ class Map extends Controller
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/map/index.php';
+        //echo APP . 'view/map/index.php';
+        die('a');
         require APP . 'view/_templates/footer.php';
     }
     /**
