@@ -107,6 +107,14 @@ class queryFactory {
       $connectionRetry--;
     }
     
+    if (!$this->link) {
+      echo "Error: Unable to connect to MySQL." . PHP_EOL;
+      echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+      echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+      exit;
+  }
+
+
     if ($this->link) {
       if ($this->link->select_db($zf_database)) {
         if (defined('DB_CHARSET') && version_compare(@mysqli_get_server_info(), '4.1.0', '>=')) {
