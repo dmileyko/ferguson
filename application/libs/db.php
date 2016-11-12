@@ -104,7 +104,7 @@ class queryFactory {
     $connectionRetry = 10;
     while (!isset($this->link) || ($this->link == FALSE && $connectionRetry !=0) )
     {
-      $this->link = mysqli_connect($zf_host, $zf_user, $zf_password, $zf_port, $zf_database);
+      $this->link = mysqli_connect($zf_host, $zf_user, $zf_password, $zf_database, $zf_port);
       $connectionRetry--;
     }
     
