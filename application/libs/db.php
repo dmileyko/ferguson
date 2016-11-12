@@ -99,7 +99,7 @@ class queryFactory {
     $this->password = $zf_password;
     $this->pConnect = $zf_pconnect;
     $this->real = $zp_real;
-    if (!function_exists('mysqli_connect')) die ('Call to undefined function: mysqli_connect().  Please install the MySQL Connector for PHP');
+    //if (!function_exists('mysqli_connect')) die ('Call to undefined function: mysqli_connect().  Please install the MySQL Connector for PHP');
     $connectionRetry = 10;
     while (!isset($this->link) || ($this->link == FALSE && $connectionRetry !=0) )
     {
