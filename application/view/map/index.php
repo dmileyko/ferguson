@@ -32,21 +32,10 @@
 
     <div id="floating-panel">
         <b>Would you like directions?</b>
-        <a class="btn btn-primary" href="directions">Yes</a>
+        <a class="btn btn-primary" href="map/directions">Yes</a>
         <a class="btn btn-primary">No</a>
         </div>
-    <div id="floating-panel">
-    <b>Start: </b>
-    <select id="start">
-      <select>	      
-          <option value="1610 Coliseum Dr, Hampton, VA 23666">Test-place</option>     
-    </select>
-    <b>End: </b>
-    <select id="end">     
-      <option value="810 Erskine street, Hampton Va">Customer1</option>
-      <option value="34 Banister Drive, Hampton Va">Customer2</option>     
-    </select>
-    </div>
+    
     <div id="map"></div>
     <script>
       // Note: This example requires that you consent to location sharing when
