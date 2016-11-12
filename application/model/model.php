@@ -15,7 +15,7 @@ class Model
     /**
      * Get all songs from database
      */
-    public function getAllSongs()
+    public function getAllJobs()
     {
         $sql = "SELECT id, artist, track, link FROM song";
         $query = $this->db->prepare($sql);
