@@ -15,15 +15,15 @@ class Login extends Controller
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
     public function index()
-    {
+    {     
         if (isset($_POST['submit'])){              
             $employeeModel = $this->loadModel('employee');
-            $user = $employeeModel->get_by_username($_POST['username']);
+            $user = $employeeModel->get_by_username($_POST['username']);            
             if ($user && $user->password != $_POST['password']) {
                 $this->loginError = "Incorrect Username or Password.";
             } else if ($user && $user->password == $_POST['password']) { 
                 $_SESSION['current_user'] = $user;
-                header('location: ' . APP . 'home');
+                header('location: ' . URL . '/home');
             } else 
                 $this->loginError = "Incorrect Username or Password.";
         }
@@ -39,11 +39,11 @@ class Login extends Controller
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
     
-    public function test()
+    /*public function login()
     {
         require APP . 'view/_templates/header.php';
         require APP . 'view/login/test.php';
         require APP . 'view/_templates/footer.php';
         // load views        
-    }
+    }*/
 }
