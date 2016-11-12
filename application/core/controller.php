@@ -31,8 +31,10 @@ class Controller
         // @see http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
         //$this->db = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET, DB_USER, DB_PASS, $options);
         
+        phpinfo();
         $this->db = new queryFactory();
         $this->db->connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, false, false);
+    
     }
     /**
      * Loads the "model".
