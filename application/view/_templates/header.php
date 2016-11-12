@@ -40,16 +40,16 @@
 <body>
     <!-- logo -->
     <div class="container-fluid logo-strip">
-        <div class="logo col-xs-6 col-sm-4 col-md-6">
+        <div class="row">
+        <div class="logo col-xs-6 col-sm-4 col-md-3">
             <img src="/images/Ferguson_Enterprises_Logo.svg.png" alt="Ferguson Logo" class="img-responsive">
         </div>
+        </div>
     </div>
-    <!-- navigation -->
-    <div class="navigation">
-        <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>home/exampleone">subpage</a>
-        <a href="<?php echo URL; ?>home/exampletwo">subpage 2</a>
-        <a href="<?php echo URL; ?>songs">songs</a>
-    </div>
+    <div class="container-fluid content-body">
+        <div id="main" class="row">
+
+
+    
 
 
