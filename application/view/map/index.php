@@ -36,18 +36,21 @@
     <b>Start: </b>
     <select id="start">
       <select>
-	      <?php foreach($customers as $customer){?>
-		  <option value="<?php echo $this->current_user->employee_id;?>"><$this->current_user->first_name . ' ' . $this->current_user->lastname</option>
-          <option value="1610 Coliseum Dr, Hampton, VA 23666">Homebase</option>
-		  <option value="<?php echo $this-employee->address;?>">Employee's Home</option>
-		  <?php}?>
+	      /*<?php foreach($customers as $customer){?>
+		  *<option value="<?php echo $this->current_user->employee_id;?>"><$this->current_user->first_name . ' ' . $this->current_user->lastname</option>
+          *<option value="1610 Coliseum Dr, Hampton, VA 23666">Homebase</option>
+		  *<option value="<?php echo $this-employee->address;?>">Employee's Home</option>
+		  *<?php}?>*/
+          <option value="1610 Coliseum Dr, Hampton, VA 23666">Test-place</option>
 	  
       
       
     </select>
     <b>End: </b>
     <select id="end">
-      <option value="<?php echo $customer->address;?>"><$php echo $customer->name.'-'.$customer->address;?></option>
+      /*<option value="<?php echo $customer->address;?>"><$php echo $customer->name.'-'.$customer->address;?></option>*/
+      <option value="810 Erskine street, Hampton Va">Customer1</option>
+      <option value="34 Banister Drive, Hampton Va">Customer2</option>
      
     </select>
     </div>
