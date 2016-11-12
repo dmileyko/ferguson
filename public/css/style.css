@@ -1,3 +1,29 @@
-body {
-    background: blue;
+html, body {
+    height: 100%;
+    background: #333;
+    background-image: url(/images/Ferguson_Solutions.jpg);
+    background-repeat: no-repeat;
+    background-size: cover cover;       
+}
+.logo-strip {
+    background: #004568;
+    padding: 2vh;
+}
+.logo img {
+    max-height: 100px;
+}
+#main {
+    position: relative;
+}
+.login {
+    color: #fff;
+    padding-top: 125px;
+}
+@media (max-height: 650px) {
+    .login {
+        padding-top: 50px;
+    }
+}
+img, object, embed {
+    max-width: 100% !important;
 }
