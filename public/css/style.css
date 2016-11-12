@@ -1,3 +1,9 @@
-body {
-    background: blue;
+.logo-strip {
+    background: #004568;
+}
+.logo img {
+    max-height: 100px;
+}
+img, object, embed {
+    max-width: 100% !important;
 }
