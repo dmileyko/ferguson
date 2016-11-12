@@ -25,6 +25,11 @@ html, body {
         padding-top: 50px;
     }
 }
+@media (max-height: 450px) {
+    .login {
+        padding-top: 25px;
+    }
+}
 img, object, embed {
     max-width: 100% !important;
 }
