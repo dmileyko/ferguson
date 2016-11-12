@@ -14,16 +14,17 @@
       }
       #floating-panel {
         position: absolute;
-        top: 10px;
-        left: 25%;
+        top: 50px;
+        left: 40%;
         z-index: 5;
-        background-color: #fff;
-        padding: 5px;
+        background-color: #004568;
+        padding: 20px 40px;
         border: 1px solid #999;
         text-align: center;
+        color: white;
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
-        padding-left: 10px;
+        padding-left: 20px;
       }
     </style>
   </head>
@@ -48,10 +49,13 @@
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 7,
-          center: {lat: 41.85, lng: -87.65}
+          center: {lat: 37.0387, lng: -76.3882},
+          zoom: 11
         });
+
         directionsDisplay.setMap(map);
+
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
 
         var onChangeHandler = function() {
           calculateAndDisplayRoute(directionsService, directionsDisplay);
