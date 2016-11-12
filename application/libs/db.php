@@ -16,7 +16,7 @@
  *
  */
 class queryFactory {
-  var $link, $count_queries, $total_query_time;
+  var $link, $count_queries, $total_query_time, $port;
   function queryFactory() {
     $this->count_queries = 0;
     $this->total_query_time = 0;
@@ -92,8 +92,9 @@ class queryFactory {
 		return $res;  
 	}
   
-  function connect($zf_host, $zf_user, $zf_password, $zf_database, $zf_pconnect = 'false', $zp_real = false) {
+  function connect($zf_host, $zf_user, $zf_password, $zf_database, $zf_port, $zf_pconnect = 'false', $zp_real = false) {
     $this->database = $zf_database;
+    $this->port = $zf_port;
     $this->user = $zf_user;
     $this->host = $zf_host;
     $this->password = $zf_password;
@@ -103,7 +104,7 @@ class queryFactory {
     $connectionRetry = 10;
     while (!isset($this->link) || ($this->link == FALSE && $connectionRetry !=0) )
     {
-      $this->link = mysqli_connect($zf_host, $zf_user, $zf_password, $zf_database);
+      $this->link = mysqli_connect($zf_host, $zf_user, $zf_password, $zf_port, $zf_database);
       $connectionRetry--;
     }
     
