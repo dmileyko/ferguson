@@ -1,3 +1,4 @@
 {
-    "WEBDIR": "htdocs/public"
+    "WEBDIR": "htdocs/public",
+    "PHP_EXTENSIONS": ["pdo", "mysqli", "pdo_mysql", "mysql"]
 }
