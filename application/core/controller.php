@@ -54,12 +54,13 @@ class Controller
 		}*/
 
         if ($name == '' ) {
-            require APP . 'model/model.php';
+            require_once APP . 'model/model.php';
             // create new "model" (and pass the database connection)
             $this->model = new Model($this->db);
-        } else {
-            if(file_exists(APP . 'model/' . strtolower($name) . '.php')){
-                require APP . 'model/' . strtolower($name) . '.php';
+        } else {        	
+            if(file_exists(APP . 'model/' . strtolower($name) . '.php')){            	         
+                require_once APP . 'model/' . strtolower($name) . '.php';
+                $name .= 'Model';
                 return new $name($this->db);
             }
         }

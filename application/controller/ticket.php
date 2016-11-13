@@ -15,7 +15,7 @@ class Ticket extends Controller
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
     public function index()
-    {           
+    {      	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/ticket/index.php';
@@ -26,8 +26,10 @@ class Ticket extends Controller
      * This method handles what happens when you move to http://yourproject/home/exampleone
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
-    public function view()
-    {           
+    public function view($ticket_id)
+    {      	
+    	$ticketModel = $this->loadModel('Ticket');
+    	$ticket = $ticketModel->get_by_id($ticket_id);
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/ticket/view.php';

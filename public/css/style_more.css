@@ -22,3 +22,8 @@
 		width: 40px;
 	}
 }
+
+.list-group.transparent>li { background-color: transparent; border: none; border-bottom: 2px solid white; }
+.list-group.transparent>li:first-child { border-top: 2px solid white; }
+.list-group-item a.ticket-thumbnail { text-decoration: none; color: white; }
+.list-group-item a.ticket-thumbnail:hover { color: #ccc; }

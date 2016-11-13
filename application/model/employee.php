@@ -1,6 +1,6 @@
 <?php
 
-class Employee
+class EmployeeModel
 {
     function __construct($db)
     {

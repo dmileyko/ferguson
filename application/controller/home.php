@@ -19,9 +19,22 @@ class Home extends Controller
             header('location: ' . URL . '/login');
             exit;
         }
+        
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/index.php';
+        
+        $ticketModel = $this->loadModel('Ticket');
+        
+        switch ($this->current_user->user_type_id) {
+        	case "1" :
+        			$tickets = $ticketModel->get_by_combination(0, 0);
+        			require APP . 'view/home/admin.php';
+        			break;
+        	case "2" :	
+        			$tickets = $ticketModel->get_by_combination($this->current_user->employee_id, 0);
+        			require APP . 'view/home/technician.php';
+        			break;        	  
+        }        
         require APP . 'view/_templates/footer.php';
     }
     /**
