@@ -1,11 +1,8 @@
 
-<<<<<<< HEAD
 
-  <style>
-=======
     <title>Directions service</title>
     <style>
->>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784
+
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
@@ -32,40 +29,13 @@
         padding-left: 20px;
       }
     </style>
-<<<<<<< HEAD
-  </head>
-  <body>
+
     <div id="floating-panel">
         <b>Would you like directions?</b>
-        <a class="btn btn-primary" href="directions">Yes</a>
-        <a class="btn btn-primary">No</a>
+        <a class="btn btn-primary" href="map/directions">Yes</a>
+        <a class="btn btn-primary" href="">No</a>
         </div>
-
-=======
-  
-    <div id="floating-panel">
-    <b>Start: </b>
-    <select id="start">
-      <select>
-	      <?php /*foreach($customers as $customer){?>
-		  *<option value="<?php echo $this->current_user->employee_id;?>"><$this->current_user->first_name . ' ' . $this->current_user->lastname</option>
-          *<option value="1610 Coliseum Dr, Hampton, VA 23666">Homebase</option>
-		  *<option value="<?php echo $this-employee->address;?>">Employee's Home</option>
-		  *<?php} */ ?>
-          <option value="1610 Coliseum Dr, Hampton, VA 23666">Test-place</option>
-	  
-      
-      
-    </select>
-    <b>End: </b>
-    <select id="end">
-      /*<option value="<?php echo $customer->address;?>"><$php echo $customer->name.'-'.$customer->address;?></option>*/
-      <option value="810 Erskine street, Hampton Va">Customer1</option>
-      <option value="34 Banister Drive, Hampton Va">Customer2</option>
-     
-    </select>
-    </div>
->>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784
+    
     <div id="map"></div>
     <script>
       // Note: This example requires that you consent to location sharing when
@@ -108,17 +78,5 @@
       }
     </script>
     <script async defer
-<<<<<<< HEAD
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHfrGVUCxPK80gO1Yex_WlRktiJLfcoFc&callback=initMap">
     </script>
-
-
-
-
-
-
- 
-=======
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAoMdfrvyUlhABsybIWPrZEREzij4rfSY&callback=initMap">
-    </script>
->>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784

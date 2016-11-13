@@ -19,7 +19,6 @@ class Map extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/map/index.php';
         //echo APP . 'view/map/index.php';
-        die('a');
         require APP . 'view/_templates/footer.php';
     }
     /**
@@ -33,7 +32,7 @@ class Map extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/map/directions.php';
         require APP . 'view/_templates/footer.php';
-<<<<<<< HEAD
+
     }
     /**
      * PAGE: exampletwo
@@ -47,7 +46,5 @@ class Map extends Controller
         require APP . 'view/home/example_two.php';
         require APP . 'view/_templates/footer.php';
     }*/
-=======
-    }   
->>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784
+
 }

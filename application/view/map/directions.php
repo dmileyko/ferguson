@@ -40,6 +40,11 @@
     <b>End: </b>
     <select id="end">
       <option value="34 Banister Drive, Hampton Va">Customer 1</option>
+      <option value="37.042832, -76.38060">Customer 2</option>
+      <option value="37.0453836, -76.347885">Customer 3</option>
+      <option value="37.0236703, -76.376402">Customer 4</option>
+      <option value="37.049513, -76.397946">Customer 5</option>
+      <option value="2195 Executive Dr, Hampton, VA 23666, USA">Customer 6</option>
 
     </select>
     </div>
