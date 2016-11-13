@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 login fade-in">
+<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 new-ticket fade-in">
     <h1>
     	Tickets
     	<a href="ticket" class="pull-right">+ Add New</a>

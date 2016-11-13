@@ -16,6 +16,10 @@ if (!class_exists('TicketModel')) {
 	    /**
 	     * Get all songs from database
 	     */ 
+	    public function add_ticket($ticket) {
+	    	$this->db->db_perform('ticket', $ticket);	
+	    }
+	    
 	    public function get_levels()
 	    {
 	    	return $this->db->get_results('select * from level');
@@ -39,7 +43,7 @@ if (!class_exists('TicketModel')) {
 	        	LEFT JOIN employee ON employee.employee_id = ticket.employee_id   
 	        	LEFT JOIN ticket_status ON ticket_status.ticket_status_id = ticket.ticket_status_id
 	        	LEFT JOIN level ON level.level_id = ticket.level_id        	
-	        	where 1=1 $search order by ticket.date_created
+	        	where 1=1 $search order by ticket.date_created desc
 	        ");   
 	    }
 	    
@@ -57,7 +61,7 @@ if (!class_exists('TicketModel')) {
 	    
 	    public function delete($ticket_id)
 	    {
-	    	$this->db->Execute('delete from ticket where ticket_id' . $ticket_id);	    
+	    	$this->db->Execute('delete from ticket where ticket_id=' . $ticket_id);	    
 	    }
 	}
 }

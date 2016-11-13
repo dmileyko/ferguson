@@ -23,6 +23,32 @@ class Ticket extends Controller
     	$employeeModel = $this->loadModel('Employee');
     	$employees = $employeeModel->get_by_type(2);
     	
+    	if (isset($_POST['submit'])) 
+    	{
+    		$arrival_hour = mysql_real_escape_string($_POST['arrival_hour']);
+    		$arrival_min = mysql_real_escape_string($_POST['arrival_min']);
+    		$arrival_am = mysql_real_escape_string($_POST['arrival_am']);
+    	
+    		$ticket = array(	
+    			'customer' => mysql_real_escape_string($_POST['customer']),
+    			'address' => mysql_real_escape_string($_POST['address']),
+    			'description' => mysql_real_escape_string($_POST['description']),    		
+    			'time_spent' => mysql_real_escape_string($_POST['time_spent']),
+    			'level_id' => mysql_real_escape_string($_POST['level_id']),
+    			'ticket_status_id' => mysql_real_escape_string($_POST['ticket_status_id']),
+    			'employee_id' => mysql_real_escape_string($_POST['employee_id']),
+    			'estimated_arrival' => date('Y-m-d H:i:s', mktime($arrival_am == 'a' ? $arrival_hour : $arrival_hour + 12, $arrival_min, 0))
+    		);
+    		
+    		print_r($ticket);
+    		//, date('m'), date('j'), date('Y')
+    		
+    		
+    		$ticketModel->add_ticket($ticket);
+    		
+    		header('location: ' . URL . '/home');
+    	}
+    	    	    	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/ticket/index.php';
@@ -47,9 +73,6 @@ class Ticket extends Controller
     {      	
     	$ticketModel = $this->loadModel('Ticket');
     	$ticket = $ticketModel->delete($ticket_id);
-        // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/admin.php';
-        require APP . 'view/_templates/footer.php';
+        header('location: ' . URL . '/home');
     }
 }

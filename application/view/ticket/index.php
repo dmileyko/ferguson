@@ -2,8 +2,8 @@
     <h1>Create a ticket</h1>
     <form method="post">
         <div class="form-group">
-            <label for="custname">Customer Name</label>
-            <input type="custname" class="form-control" id="custname" placeholder="Customer Name" name="custname" required>
+            <label for="customer">Customer Name</label>
+            <input type="customer" class="form-control" id="customer" placeholder="Customer Name" name="customer" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
@@ -11,8 +11,8 @@
             </textarea>
         </div>
         <div class="form-group">
-            <label for="arrival">Address</label>
-            <input type="address" class="form-control" id="address" placeholder="Address" name="address" required>
+            <label for="address">Address</label>
+            <input class="form-control" id="address" placeholder="Address" name="address" required>
         </div>
         <div class="form-group row">
             <div class="col-xs-6">
@@ -74,8 +74,8 @@
                 </select-->
             </div> 
             <div class="col-xs-6">
-                <label for="duration">Estimated Duration</label>
-                <select type="duration" class="form-control" id="duration" placeholder="Duration" name="duration" required>
+                <label for="time_spent">Estimated Duration</label>
+                <select class="form-control" id="time_spent" placeholder="Duration" name="time_spent" required>
                     <option value="0.5">.5 hour</option>
                     <option value="1">1 hour</option>
                     <option value="1.5">1.5 hours</option>
@@ -96,7 +96,7 @@
             </div>
             <div class="col-xs-6">   
                 <label for="status">Ticket Status</label>
-                <select type="status" class="form-control" id="status" placeholder="Status" name="status" required>
+                <select type="status" class="form-control" id="status" placeholder="Status" name="ticket_status_id" required>
                 	<?php foreach($ticket_statuses as $ticket_status) { ?>
                 		<option value="<?php echo $ticket_status->ticket_status_id; ?>"><?php echo $ticket_status->name; ?></option>
                 	<?php } ?>
@@ -109,15 +109,16 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="status">Assigned To:</label>
-            <select type="status" class="form-control" id="status" placeholder="Status" name="status" required>
+            <label for="employee_id">Assigned To:</label>
+            <select class="form-control" id="employee_id" placeholder="Employee" name="employee_id" required>
                 <option value="unassigned">Unassigned</option>
                 <?php foreach($employees as $employee) { ?>
                 	<option value="<?php echo $employee->employee_id; ?>"><?php echo $employee->firstname . ' ' . $employee->lastname; ?></option>
                 <?php } ?>                	
             </select>
-        </div>                                
-        <input type="submit" class="btn btn-default pull-right" name="submit" value="Submit" />
+        </div>		
+        <input type="submit" class="btn btn-default pull-right" name="submit" value="Submit" />&nbsp;
+        <a href="home" class="btn btn-default pull-left">Cancel</a>
     </form>
 </div>
  
