@@ -15,9 +15,9 @@ html, body {
 #main {
     position: relative;
 }
-img, object, embed {
+/*img, object, embed {
     max-width: 100% !important;
-}
+}*/
 input:focus::-webkit-input-placeholder, input:focus::-webkit-textarea-placeholder {
     color: transparent;
 }

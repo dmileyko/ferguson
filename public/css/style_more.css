@@ -8,3 +8,17 @@
     padding-top: 40px;
 }
 .current-user-link { margin-right: 20px; }
+
+@media (max-width: 768px) {
+	.loggedin-user-image {
+		height: 20px; 
+		width: 20px;
+	}
+}
+
+@media (min-width: 769px) {
+	.loggedin-user-image {
+		height: 40px; 
+		width: 40px;
+	}
+}

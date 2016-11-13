@@ -2,7 +2,7 @@
 # more here: http://httpd.apache.org/docs/2.2/content-negotiation.html
 Options -MultiViews
 
-# RewriteBase /ferguson/
+RewriteBase /ferguson/
 
 # Activates URL rewriting (like myproject.com/controller/action/1/2/3)
 RewriteEngine On

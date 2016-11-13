@@ -1,5 +1,7 @@
-        </div> <!-- end of #main -->
-    </div> <!-- end of .content-body -->
+    <?php if (strpos($_GET['url'], 'map') === false) { ?>
+	        </div> <!-- end of #main -->
+	    </div> <!-- end of .content-body -->
+    <?php } ?>
     <div class="footer">
     </div>
 
