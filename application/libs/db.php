@@ -179,7 +179,7 @@ class queryFactory {
       }
       $query = substr($query, 0, -2) . ' WHERE ' . $parameters;
     }
-	//echo "<br />Query: " . $query . "<br />";	
+	//echo "<br />Query: " . $query . "<br />"; die();	
     return $this->Execute($query);
   }
   function selectdb($zf_database) {

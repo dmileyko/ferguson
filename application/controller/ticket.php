@@ -23,7 +23,7 @@ class Ticket extends Controller
     	$employeeModel = $this->loadModel('Employee');
     	$employees = $employeeModel->get_by_type(2);
     	
-    	if (isset($_POST['submit'])) 
+    	if (isset($_POST['submit']) && $_POST['submit'] == 'Submit') 
     	{
     		$arrival_hour = mysql_real_escape_string($_POST['arrival_hour']);
     		$arrival_min = mysql_real_escape_string($_POST['arrival_min']);
@@ -63,6 +63,34 @@ class Ticket extends Controller
     {   
     	$ticketModel = $this->loadModel('Ticket');
     	$ticket = $ticketModel->get_by_id($ticket_id);
+    	
+    	$levels = $ticketModel->get_levels();
+    	$ticket_statuses = $ticketModel->get_ticket_statuses();
+    	
+    	$employeeModel = $this->loadModel('Employee');
+    	$employees = $employeeModel->get_by_type(2);
+    	
+    	if (isset($_POST['submit']) && $_POST['submit'] == 'Save') 
+    	{
+    		$arrival_hour = mysql_real_escape_string($_POST['arrival_hour']);
+    		$arrival_min = mysql_real_escape_string($_POST['arrival_min']);
+    		$arrival_am = mysql_real_escape_string($_POST['arrival_am']);
+    	
+    		$ticket = array(
+    			'time_spent' => mysql_real_escape_string($_POST['time_spent']),
+    			'ticket_status_id' => mysql_real_escape_string($_POST['ticket_status_id']),
+    			'estimated_arrival' => date('Y-m-d H:i:s', mktime($arrival_am == 'a' ? $arrival_hour : $arrival_hour + 12, $arrival_min, 0)),
+    			'note' => mysql_real_escape_string($_POST['note']),
+    			'date_created' => date('Y-m-d H:i:s')
+    		);
+    		//print_r($ticket); echo $ticket_id; die();
+    		//, date('m'), date('j'), date('Y')
+    		    		
+    		$ticketModel->update_ticket($ticket, $ticket_id);    		
+    		header('location: ' . URL . '/home');
+    		exit;
+    	}
+    	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/ticket/view.php';
