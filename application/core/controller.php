@@ -5,6 +5,7 @@ class Controller
      * @var null Database Connection
      */
     public $db = null;
+    public $current_user = null;
     /**
      * @var null Model
      */
@@ -17,6 +18,7 @@ class Controller
         $this->openDatabaseConnection();
         $this->loadModel();
         session_start();
+        $this->current_user = $_SESSION['current_user'];
     }
     /**
      * Open the database connection with the credentials from application/config/config.php

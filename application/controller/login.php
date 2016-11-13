@@ -16,7 +16,7 @@ class Login extends Controller
      */
     public function index()
     {     
-        if (isset($_POST['submit'])){              
+        if (isset($_POST['submit'])){               
             $employeeModel = $this->loadModel('employee');
             $user = $employeeModel->get_by_username($_POST['username']);            
             if ($user && $user->password != $_POST['password']) {
