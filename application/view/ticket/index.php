@@ -39,9 +39,9 @@
             <div class="col-xs-6">
                 <label for="status">Ticket Tier</label>
                 <select type="status" class="form-control" id="status" placeholder="Status" name="status" required>
-                    <option value="1">Tier 1 <span class="swatch green"></span></option>
-                    <option value="2">Tier 2 <span class="swatch amber"></span></option>
-                    <option value="3">Tier 3 <span class="swatch red"></span></option>            
+                    <option value="1">Tier 1</option>
+                    <option value="2">Tier 2</option>
+                    <option value="3">Tier 3></option>            
                 </select>
             </div>
             <div class="col-xs-6">   
