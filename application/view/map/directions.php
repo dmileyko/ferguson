@@ -28,8 +28,6 @@
         opacity: 0.9;
       }
     </style>
-  </head>
-  <body>
     <div id="floating-panel" class="col-lg-12">
     	<div class="form-group">
     		<label for="start" class="label-control col-lg-1">From:</label>		   

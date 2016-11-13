@@ -1,4 +1,4 @@
-<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 new-ticket fade-in">
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 new-ticket fade-in">
     <h1>My Tickets</h1>
     <ul class="list-group transparent">
     	<?php foreach($tickets as $ticket) { ?>
@@ -8,10 +8,16 @@
 	    				<span class="ticket-customer">#<?php echo $ticket->customer; ?></span><br /> 			
 	    				<i class="fa fa-map-marker"></i><?php echo $ticket->address; ?><br />
 	    			</div>
-	    			<div class="col-sm-4">
+	    			<div class="col-sm-3">
 	    				<?php echo $ticket->status_name; ?><br />
-		    			<span class="ticket-date">Arrival @ <?php echo date('g:i a', $ticket->estimated_arrival); ?></span>	    			
+		    			<span class="ticket-date">Arrival @ <?php echo date('g:i a', strtotime($ticket->estimated_arrival)); ?></span>	    			
 		    		</div>
+		    		<div class="col-sm-1 nowrap">
+		    			<?php 
+		    				$miles = rand(0,300) / 10;
+		    				echo $miles . ' mi';
+		    			?>
+		    		</div>		    		
 		    	</a>
     		</li>
     	<?php } ?>
