@@ -13,7 +13,8 @@ class Ticket
 
     /**
      * Get all songs from database
-     */
+     */ 
+    
     public function get_by_combination($employee_id, $ticket_status_id)
     {
     	if ($employee_id > 0)
