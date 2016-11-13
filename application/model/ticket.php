@@ -18,10 +18,10 @@ class Ticket
     public function get_by_combination($employee_id, $ticket_status_id)
     {
     	if ($employee_id > 0)
-    		$search .= ' and employee_id=' . $employe_id;
+    		$search .= ' and employee_id=' . $employee_id;
         if ($ticket_status_id > 0)
     		$search .= ' and ticket_status_id=' . $ticket_status_id;
 
-        return $this->db->get_results("SELECT * FROM ticket where 1=1 $search order by created_date");   
+        return $this->db->get_results("SELECT * FROM ticket where 1=1 $search order by date_created");   
     }
 }

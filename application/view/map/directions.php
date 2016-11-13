@@ -14,8 +14,8 @@
       }
       #floating-panel {
         position: absolute;
-        top: 50px;
-        left: 40%;
+        /*top: 50px;
+        left: 40%;*/
         z-index: 5;
         background-color: #004568;
         padding: 20px 40px;
@@ -25,28 +25,36 @@
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         padding-left: 20px;
+        opacity: 0.9;
       }
     </style>
   </head>
   <body>
-    <div id="floating-panel">
-    <b>Start: </b>
-    <select id="start">
-      <option value="37.0347, -76.3813">My Location</option>
-      <option value="37.127972, -76.511611">Homebase</option>
-      <option value="810 Erskine street, Hampton Va">My House</option>
-
-    </select>
-    <b>End: </b>
-    <select id="end">
-      <option value="34 Banister Drive, Hampton Va">Customer 1</option>
-      <option value="37.042832, -76.38060">Customer 2</option>
-      <option value="37.0453836, -76.347885">Customer 3</option>
-      <option value="37.0236703, -76.376402">Customer 4</option>
-      <option value="37.049513, -76.397946">Customer 5</option>
-      <option value="2195 Executive Dr, Hampton, VA 23666, USA">Customer 6</option>
-
-    </select>
+    <div id="floating-panel" class="col-lg-12">
+    	<div class="form-group">
+    		<label for="start" class="label-control col-lg-1">From:</label>		   
+	    	<div class="col-lg-3">
+			    <select id="start" class="form-control">
+			      <option value="37.0347, -76.3813">My Location</option>
+			      <option value="37.127972, -76.511611">Homebase</option>
+			      <option value="810 Erskine street, Hampton Va">My House</option>	
+			    </select>
+		    </div>
+		    <label for="end" class="label-control col-lg-1">To:</label>
+		    <div class="col-lg-3">
+			    <select id="end" class="form-control">
+			    	<?php foreach($tickets as $ticket) { ?>
+			    		<option value="<?php echo $ticket->address; ?>"><?php echo $ticket->customer . ' (' . $ticket->address . ')'; ?></option>
+			    	<?php } ?>
+			    	<!--option value="34 Banister Drive, Hampton Va">Customer 1</option>
+			      	<option value="37.042832, -76.38060">Customer 2</option>
+			      	<option value="37.0453836, -76.347885">Customer 3</option>
+			      	<option value="37.0236703, -76.376402">Customer 4</option>
+			      	<option value="37.049513, -76.397946">Customer 5</option>
+			      	<option value="2195 Executive Dr, Hampton, VA 23666, USA">Customer 6</option-->
+			   	</select>
+			</div>
+		</div>
     </div>
     <div id="map"></div>
     <script>

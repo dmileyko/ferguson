@@ -28,7 +28,9 @@ class Map extends Controller
      */
     public function directions()
     {
-        // load views
+    	$ticketModel = $this->loadModel('Ticket');
+    	$tickets = $ticketModel->get_by_combination($this->current_user->employee_id, 2);
+    	// load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/map/directions.php';
         require APP . 'view/_templates/footer.php';

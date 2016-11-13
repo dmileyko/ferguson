@@ -58,9 +58,9 @@ class Controller
             // create new "model" (and pass the database connection)
             $this->model = new Model($this->db);
         } else {
-            if(file_exists(APP . 'model/' . $name . '.php')){
-                require APP . 'model/' . $name . '.php';
-                return new Employee($this->db);
+            if(file_exists(APP . 'model/' . strtolower($name) . '.php')){
+                require APP . 'model/' . strtolower($name) . '.php';
+                return new $name($this->db);
             }
         }
     }
