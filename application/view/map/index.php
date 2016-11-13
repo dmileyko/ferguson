@@ -1,6 +1,5 @@
 
 
-    <title>Directions service</title>
     <style>
 
       /* Always set the map height explicitly to define the size of the div
@@ -77,6 +76,5 @@
                               'Error: Your browser doesn\'t support geolocation.');
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHfrGVUCxPK80gO1Yex_WlRktiJLfcoFc&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHfrGVUCxPK80gO1Yex_WlRktiJLfcoFc&callback=initMap">
     </script>
