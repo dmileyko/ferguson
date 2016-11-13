@@ -32,11 +32,12 @@ if (!class_exists('TicketModel')) {
 	    
 	    public function get_by_combination($employee_id, $ticket_status_id)
 	    {
+	    	$search = '';
 	    	if ($employee_id > 0)
-	    		$search .= ' and employee_id=' . $employee_id;
+	    		$search .= ' and ticket.employee_id=' . $employee_id;
 	        if ($ticket_status_id > 0)
 	    		$search .= ' and ticket.ticket_status_id=' . $ticket_status_id;
-	
+		  	        	
 	        return $this->db->get_results("
 	        	SELECT ticket.*, ticket_status.name as status_name, level.name as level_name, CONCAT(employee.firstname, ' ', employee.lastname) as employee_name 
 	        	FROM ticket
@@ -59,7 +60,7 @@ if (!class_exists('TicketModel')) {
 	        ");    	
 	    }
 	    
-	    public function delete($ticket_id)
+	    public function delete_ticket($ticket_id)
 	    {
 	    	$this->db->Execute('delete from ticket where ticket_id=' . $ticket_id);	    
 	    }
