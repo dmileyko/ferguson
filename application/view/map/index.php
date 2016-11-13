@@ -33,7 +33,7 @@
     <div id="floating-panel">
         <b>Would you like directions?</b>
         <a class="btn btn-primary" href="map/directions">Yes</a>
-        <a class="btn btn-primary">No</a>
+        <a class="btn btn-primary" href="">No</a>
         </div>
     
     <div id="map"></div>
