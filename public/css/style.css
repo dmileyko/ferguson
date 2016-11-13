@@ -15,6 +15,14 @@ html, body {
 #main {
     position: relative;
 }
+img, object, embed {
+    max-width: 100% !important;
+}
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+/* page-specific styles */
 .login {
     color: #fff;
     padding-top: 125px;
@@ -24,6 +32,8 @@ html, body {
         padding-top: 50px;
     }
 }
-img, object, embed {
-    max-width: 100% !important;
+@media (max-height: 450px) {
+    .login {
+        padding-top: 50px;
+    }
 }
