@@ -35,4 +35,14 @@ class Ticket extends Controller
         require APP . 'view/ticket/view.php';
         require APP . 'view/_templates/footer.php';
     }
+    
+	public function delete($ticket_id)
+    {      	
+    	$ticketModel = $this->loadModel('Ticket');
+    	$ticket = $ticketModel->delete($ticket_id);
+        // load views
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/admin.php';
+        require APP . 'view/_templates/footer.php';
+    }
 }

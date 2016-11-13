@@ -15,25 +15,5 @@
 		    	</a>
     		</li>
     	<?php } ?>
-    </ul>
-    <table class="table">
-    	<thead>
-    		<tr>
-    			<th>Customer</th>
-    			<th>Address</th>
-    			<th>Arrival Time</th>    			
-    			<th>Status</th>
-    		</tr>
-    	</thead>
-    	<tbody>
-    		<?php foreach($tickets as $ticket) { ?>
-    		<tr>    
-    			<td><?php echo $ticket->customer; ?></td>
-    			<td><?php echo $ticket->address; ?></td>
-    			<td><?php echo date('m/d/Y g:i a', $ticket->estimated_arrival); ?></td>
-    			<td><?php echo $ticket->status_name; ?></td>    						
-    		</tr>
-    		<?php } ?>
-    	</tbody>
-    </table>    
+    </ul>    
 </div>

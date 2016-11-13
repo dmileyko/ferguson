@@ -25,8 +25,9 @@ if (!class_exists('TicketModel')) {
 	    		$search .= ' and ticket.ticket_status_id=' . $ticket_status_id;
 	
 	        return $this->db->get_results("
-	        	SELECT ticket.*, ticket_status.name as status_name, level.name as level_name
-	        	FROM ticket   
+	        	SELECT ticket.*, ticket_status.name as status_name, level.name as level_name, CONCAT(employee.firstname, ' ', employee.lastname) as employee_name 
+	        	FROM ticket
+	        	LEFT JOIN employee ON employee.employee_id = ticket.employee_id   
 	        	LEFT JOIN ticket_status ON ticket_status.ticket_status_id = ticket.ticket_status_id
 	        	LEFT JOIN level ON level.level_id = ticket.level_id        	
 	        	where 1=1 $search order by ticket.date_created
@@ -36,12 +37,18 @@ if (!class_exists('TicketModel')) {
 		public function get_by_id($ticket_id)
 	    {
 	    	return $this->db->get_single("
-	        	SELECT ticket.*, ticket_status.name as status_name, level.name as level_name
-	        	FROM ticket   
+	        	SELECT ticket.*, ticket_status.name as status_name, level.name as level_name, CONCAT(employee.firstname, ' ', employee.lastname) as employee_name
+	        	FROM ticket
+	        	LEFT JOIN employee ON employee.employee_id = ticket.employee_id    
 	        	LEFT JOIN ticket_status ON ticket_status.ticket_status_id = ticket.ticket_status_id
 	        	LEFT JOIN level ON level.level_id = ticket.level_id        	
 	        	where ticket_id=$ticket_id
-	        ");   
+	        ");    	
+	    }
+	    
+	    public function delete($ticket_id)
+	    {
+	    	$this->db->query('delete from ticket where ticket_id' = $ticket_id);	    
 	    }
 	}
 }
