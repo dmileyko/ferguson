@@ -1,13 +1,15 @@
-<div class="middle-box text-center loginscreen  animated fadeInDown">
-    <form action="" method="POST">
+
+<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 login">
+    <h1>Please log in</h1>
+    <form method="post">
         <div class="form-group">
-            <input type="text" name="username" class="form-control" aria-autocomplete="both" autocomplete="on" placeholder="Username" required="" />  
+            <label for="username">Your Username</label>
+            <input type="username" class="form-control" id="username" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-            <input name="password" type="password" class="form-control" aria-autocomplete="both" autocomplete="on" placeholder="Password" required="" />
-        </div>            
-        <div class="text-danger"> <?php echo $this->loginError; ?></div>
-        <input type='submit' name='submit' class="btn btn-primary block full-width m-b" value='Login'>
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        </div>
+        <input type="submit" class="btn btn-default pull-right" name="submit" value="Submit" />
     </form>
 </div>
-<a href="map/directions">Go</a>

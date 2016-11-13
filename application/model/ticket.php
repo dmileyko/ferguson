@@ -14,10 +14,13 @@ class Ticket
     /**
      * Get all songs from database
      */
-    public function get_by_combination($employee_id)
+    public function get_by_combination($employee_id, $ticket_status_id)
     {
     	if ($employee_id > 0)
-    		$search .= ' and employe_id=' . 
-        return $this->db->get_single("SELECT * FROM ticket where email='" . $username . "'");   
+    		$search .= ' and employee_id=' . $employe_id;
+        if ($ticket_status_id > 0)
+    		$search .= ' and ticket_status_id=' . $ticket_status_id;
+
+        return $this->db->get_results("SELECT * FROM ticket where 1=1 $search order by created_date");   
     }
 }
