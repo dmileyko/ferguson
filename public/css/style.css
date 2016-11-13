@@ -21,14 +21,6 @@ img, object, embed {
 input:focus::-webkit-input-placeholder, input:focus::-webkit-textarea-placeholder {
     color: transparent;
 }
-.swatch {
-    display: inline-block;
-    height: 1em;
-    width: 1em;
-}
-.red {background: #c00;}
-.amber {background: #dc9;}
-.green {background: #3c0;}
 
 /* make keyframes that tell the start state and the end state of our object */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
