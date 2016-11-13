@@ -32,25 +32,19 @@
     <!-- please note: Other JavaScript files are loaded in the footer to speed up page construction -->
 
     <!-- CSS -->
-    <link href="<?php echo URL; ?>/css/style.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>/css/style_more.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <link href="<?php echo URL; ?>/css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- logo -->
-    <div class="logo">
-        <img src="/images/Ferguson_Enterprises_Logo.svg.png" alt="Ferguson Logo">
+    <div class="container-fluid logo-strip">
+        <div class="row">
+        <div class="logo col-xs-6 col-sm-4 col-md-3">
+            <img src="/images/Ferguson_Enterprises_Logo.svg.png" alt="Ferguson Logo" class="img-responsive">
+        </div>
+        </div>
     </div>
-
-    <!-- navigation -->
-    <div class="navigation">
-        <a href="<?php echo URL; ?>">home</a>
-        <a href="<?php echo URL; ?>home/exampleone">subpage</a>
-        <a href="<?php echo URL; ?>home/exampletwo">subpage 2</a>
-        <a href="<?php echo URL; ?>songs">songs</a>
-    </div>
-
-
+    <div class="container-fluid content-body">
+        <div id="main" class="row">

@@ -1,3 +1,5 @@
+        </div> <!-- end of #main -->
+    </div> <!-- end of .content-body -->
     <div class="footer">
     </div>
 
