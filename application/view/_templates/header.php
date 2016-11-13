@@ -42,7 +42,7 @@
     <div class="container-fluid logo-strip">
         <div class="row">
         <div class="logo col-xs-6 col-sm-4 col-md-3">
-            <img src="/images/Ferguson_Enterprises_Logo.svg.png" alt="Ferguson Logo" class="img-responsive">
+            <img src="images/Ferguson_Enterprises_Logo.svg.png" alt="Ferguson Logo" class="img-responsive">
         </div>
         </div>
     </div>
