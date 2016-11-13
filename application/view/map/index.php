@@ -1,6 +1,11 @@
 
+<<<<<<< HEAD
+
+  <style>
+=======
     <title>Directions service</title>
     <style>
+>>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
@@ -14,18 +19,29 @@
       }
       #floating-panel {
         position: absolute;
-        top: 10px;
-        left: 25%;
+        top: 200px;
+        left: 40%;
         z-index: 5;
-        background-color: #fff;
-        padding: 5px;
+        background-color: #004568;
+        padding: 20px 40px;
         border: 1px solid #999;
         text-align: center;
+        color: white;
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
-        padding-left: 10px;
+        padding-left: 20px;
       }
     </style>
+<<<<<<< HEAD
+  </head>
+  <body>
+    <div id="floating-panel">
+        <b>Would you like directions?</b>
+        <a class="btn btn-primary" href="directions">Yes</a>
+        <a class="btn btn-primary">No</a>
+        </div>
+
+=======
   
     <div id="floating-panel">
     <b>Start: </b>
@@ -49,39 +65,9 @@
      
     </select>
     </div>
+>>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784
     <div id="map"></div>
     <script>
-      function initMap() {
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: {lat: 37.0397, lng: -76.3882}
-        });
-        directionsDisplay.setMap(map);
-
-        var onChangeHandler = function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-        };
-        document.getElementById('start').addEventListener('change', onChangeHandler);
-        document.getElementById('end').addEventListener('change', onChangeHandler);
-      }
-
-      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        directionsService.route({
-          origin: document.getElementById('start').value,
-          destination: document.getElementById('end').value,
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      }
-    </script>
-	<script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
@@ -89,8 +75,8 @@
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.0387, lng: -76.3882},
-          zoom: 13
+           center: {lat: 37.0387, lng: -76.3882},
+          zoom: 11
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -103,7 +89,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Here you are: ');
+            infoWindow.setContent('You are here');
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -122,5 +108,17 @@
       }
     </script>
     <script async defer
+<<<<<<< HEAD
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHfrGVUCxPK80gO1Yex_WlRktiJLfcoFc&callback=initMap">
+    </script>
+
+
+
+
+
+
+ 
+=======
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAoMdfrvyUlhABsybIWPrZEREzij4rfSY&callback=initMap">
     </script>
+>>>>>>> 86d79fc28d23a65d4da0cef2b60a62e6ca38a784
