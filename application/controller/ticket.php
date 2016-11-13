@@ -7,7 +7,7 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class ticket extends Controller
+class Ticket extends Controller
 {
     var $loginError;
     /**
