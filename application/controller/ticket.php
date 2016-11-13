@@ -8,7 +8,7 @@
  *
  */
 class Ticket extends Controller
-{
+{ 
     var $loginError;
     /**
      * PAGE: index
