@@ -15,7 +15,14 @@ class Ticket extends Controller
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
     public function index()
-    {      	
+    {  
+    	$ticketModel = $this->loadModel('Ticket');
+    	$levels = $ticketModel->get_levels();
+    	$ticket_statuses = $ticketModel->get_ticket_statuses();
+    	
+    	$employeeModel = $this->loadModel('Employee');
+    	$employees = $employeeModel->get_by_type(2);
+    	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/ticket/index.php';

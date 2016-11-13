@@ -16,12 +16,62 @@
         </div>
         <div class="form-group row">
             <div class="col-xs-6">
-                <label for="arrival">Arrival Time</label>
-                <select type="arrival" class="form-control" id="arrival" placeholder="Arrival" name="arrival" required>
+                <label for="arrival_hour">Arrival Time</label>
+                <div class="">
+                	<div class="col-sm-4">
+                		<div class="row">
+                			<select class="form-control col-sm-4" id="arrival_hour" placeholder="Arrival" name="arrival_hour" required>
+			                	<option value="">Hour</option>
+			                	<option value="0">00</option>                	
+			                	<option value="1">01</option>
+			                	<option value="2">02</option>
+			                	<option value="3">03</option>
+			                	<option value="4">04</option>
+			                	<option value="5">05</option>
+			                	<option value="6">06</option>
+			                	<option value="7">07</option>
+			                	<option value="8">08</option>
+			                	<option value="9">09</option>
+			                	<option value="10">10</option>
+			                	<option value="11">11</option>
+			                	<option value="12">12</option>
+			                </select>
+                		</div>	                	
+	                </div>
+	                <div class="col-sm-4">
+	                	<div class="row">
+			                <select class="form-control col-sm-4" id="arrival_min" placeholder="Arrival" name="arrival_min" required>
+			                	<option value="">Min</option>
+			                	<option value="0">00</option>                	
+			                	<option value="5">05</option>
+			                	<option value="10">10</option>
+			                	<option value="15">15</option>
+			                	<option value="20">20</option>
+			                	<option value="25">25</option>
+			                	<option value="30">30</option>
+			                	<option value="35">35</option>
+			                	<option value="40">40</option>
+			                	<option value="45">45</option>
+			                	<option value="50">50</option>
+			                	<option value="55">55</option>                	
+			                </select>
+			            </div>
+		            </div>
+		            <div class="col-sm-4">
+		            	<div class="row">
+			                <select class="form-control col-sm-4" id="arrival_am" placeholder="Arrival" name="arrival_am" required>
+			                	<option value="a">AM</option>
+			                	<option value="p">PM</option>               	
+			                </select>
+			            </div>
+		            </div>
+                </div>
+                
+                <!--select type="arrival" class="form-control" id="arrival" placeholder="Arrival" name="arrival" required>
                     <option value="0830">8:30</option>
                     <option value="0900">9:00</option>
                     <option value="0930">9:30</option>
-                </select>
+                </select-->
             </div> 
             <div class="col-xs-6">
                 <label for="duration">Estimated Duration</label>
@@ -37,21 +87,24 @@
         </div>
         <div class="form-group row">
             <div class="col-xs-6">
-                <label for="status">Ticket Tier</label>
-                <select type="status" class="form-control" id="status" placeholder="Status" name="status" required>
-                    <option value="1">Tier 1</option>
-                    <option value="2">Tier 2</option>
-                    <option value="3">Tier 3></option>            
+                <label for="level">Level</label>
+                <select class="form-control" id="level" placeholder="Level" name="level_id" required>
+                	<?php foreach($levels as $level) { ?>
+                		<option value="<?php echo $level->level_id; ?>"><?php echo $level->name; ?></option>
+                	<?php } ?>                                
                 </select>
             </div>
             <div class="col-xs-6">   
                 <label for="status">Ticket Status</label>
                 <select type="status" class="form-control" id="status" placeholder="Status" name="status" required>
-                    <option value="assigned">Assigned</option>
+                	<?php foreach($ticket_statuses as $ticket_status) { ?>
+                		<option value="<?php echo $ticket_status->ticket_status_id; ?>"><?php echo $ticket_status->name; ?></option>
+                	<?php } ?>
+                    <!--option value="assigned">Assigned</option>
                     <option value="accepted">Accepted</option>
                     <option value="enroute">En Route</option>
                     <option value="atjob">At Job</option>
-                    <option value="completed">Completed</option>                
+                    <option value="completed">Completed</option-->                
                 </select>
             </div>
         </div>
@@ -59,12 +112,12 @@
             <label for="status">Assigned To:</label>
             <select type="status" class="form-control" id="status" placeholder="Status" name="status" required>
                 <option value="unassigned">Unassigned</option>
-                <option value="cweiss">Chris Weiss</option>
-                <option value="dmileyko">Denis Mileyko</option>
-                <option value="jzuck">Jon Zuck</option>
+                <?php foreach($employees as $employee) { ?>
+                	<option value="<?php echo $employee->employee_id; ?>"><?php echo $employee->firstname . ' ' . $employee->lastname; ?></option>
+                <?php } ?>                	
             </select>
         </div>                                
-        <button type="submit" class="btn btn-default pull-right">Submit</button>
+        <input type="submit" class="btn btn-default pull-right" name="submit" value="Submit" />
     </form>
 </div>
  

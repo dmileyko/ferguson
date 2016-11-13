@@ -16,6 +16,15 @@ if (!class_exists('TicketModel')) {
 	    /**
 	     * Get all songs from database
 	     */ 
+	    public function get_levels()
+	    {
+	    	return $this->db->get_results('select * from level');
+	    }
+	    
+		public function get_ticket_statuses()
+	    {
+	    	return $this->db->get_results('select * from ticket_status');
+	    }
 	    
 	    public function get_by_combination($employee_id, $ticket_status_id)
 	    {
@@ -48,7 +57,7 @@ if (!class_exists('TicketModel')) {
 	    
 	    public function delete($ticket_id)
 	    {
-	    	$this->db->query('delete from ticket where ticket_id' = $ticket_id);	    
+	    	$this->db->Execute('delete from ticket where ticket_id' . $ticket_id);	    
 	    }
 	}
 }
